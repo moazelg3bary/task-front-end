@@ -1,0 +1,39 @@
+<!-- start box login -->
+<div class="login">
+    <div class="login-triangle"></div>
+
+    <h2 class="login-header">
+        <a routerLink="./">Log in</a>
+    </h2>
+    <span class="hr">or</span>
+    <h3 class="login-header">
+        <a routerLink="../sing-up">Sing in</a>
+    </h3>
+
+    <form class="login-container" [formGroup]="FormLogin" (ngSubmit)="login()">
+        <!-- use InputFiledComponent -->
+        <app-input-filed 
+            type="text" 
+            name="mobile"
+            [FormGroupParent]="FormLogin"
+            placeholder="Mobile"
+        >
+        </app-input-filed>
+        <!-- use InputFiledComponent -->
+        <app-input-filed 
+            type="password" 
+            name="password"
+            [FormGroupParent]="FormLogin"
+            placeholder="Password"
+        >
+        </app-input-filed>        
+        <!-- use BtnComponent -->
+        <app-btn 
+            [isLoading]="isLoading"
+            [disabled]="FormLogin.invalid"
+            type="submit" 
+            title="login">
+        </app-btn>
+    </form>
+</div>
+<!-- end box login -->

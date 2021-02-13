@@ -1,0 +1,57 @@
+
+/* 'Open Sans' font from Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+// global vars
+$white: #fff;
+$main_color: #28d;
+$main_color_2: #17c;
+$main_color_3: #05a;
+
+
+// start style section login
+.login {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+    .hr {
+        width: 100%;
+        color: #fff;
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+        background: #2288dd82;
+        text-transform: uppercase;        
+    }
+    .login-triangle {
+        width: 0;
+        margin-right: auto;
+        margin-left: auto;
+        border: 12px solid transparent;
+        // use var sass
+        border-bottom-color: $main_color;
+    }  
+    .login-header {
+        // use var sass
+        padding: 20px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1.4em;
+        text-align: center;
+        font-weight: normal;
+        // use var sass
+        background:$main_color;
+        text-transform: uppercase;
+        a {
+            color: $white;
+            display: block;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    } 
+    .login-container {
+        padding: 12px;
+        background: #ebebeb;
+    }
+}
+// end style section login

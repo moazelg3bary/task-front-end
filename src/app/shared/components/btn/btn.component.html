@@ -1,0 +1,11 @@
+<!-- start btn-component -->
+<button [ngStyle]="{
+    'background-color': bg_color ? bg_color : null,
+    'color': color ? color : null,
+    'b_color': b_color ? b_color : null
+    }"
+    [disabled]="disabled || isLoading"
+    [type]="type ? type : 'button'">
+    <b>{{title | uppercase}}</b>
+</button>
+<!-- end btn-component -->

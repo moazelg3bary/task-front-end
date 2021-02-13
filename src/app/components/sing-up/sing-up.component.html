@@ -1,0 +1,57 @@
+<!-- start box sing-up -->
+<div class="sing_up">
+    <div class="sing_up-triangle"></div>
+
+    <h3 class="sing_up-header">
+        <a routerLink="./">Sing in</a> 
+    </h3>
+    <span class="hr">or</span>
+    <h2 class="sing_up-header">
+        <a routerLink="../login">Log in</a>
+    </h2>
+
+    <form class="sing_up-container" [formGroup]="FormSingUp" (ngSubmit)="register()">
+        <!-- use InputFiledComponent -->
+        <app-input-filed type="text" name="name" [FormGroupParent]="FormSingUp" placeholder="Name">
+        </app-input-filed>
+        <!-- use InputFiledComponent -->
+        <app-input-filed type="text" name="mobile" [FormGroupParent]="FormSingUp" placeholder="Mobile">
+        </app-input-filed>
+        <!-- use InputFiledComponent -->
+        <app-input-filed type="email" name="email" [FormGroupParent]="FormSingUp" placeholder="Email">
+        </app-input-filed>
+        <!-- use InputFiledComponent -->
+        <app-input-filed type="date" name="birth_date" [FormGroupParent]="FormSingUp" placeholder="birth date">
+        </app-input-filed>
+        <!-- use InputFiledComponent -->
+        <app-input-filed type="password" name="password" [FormGroupParent]="FormSingUp" placeholder="Password">
+        </app-input-filed>
+        <div class="wrap">
+            <select (change)="selectCity($event)" formControlName="country" name="country" >
+                <option disabled>Country</option>
+                <option 
+                    value="{{item.id}}"
+                    *ngFor="let item of country" 
+                    >
+                    {{item.name}}
+                </option>
+            </select>
+        </div>
+        <div *ngIf="FormSingUp.value.country != 'Country'" class="wrap">
+            <select formControlName="city" name="city">
+                <option disabled>City</option>
+                <option value="{{item.id}}" *ngFor="let item of city">
+                    {{item.name}}
+                </option>
+            </select>
+        </div>
+        <!-- use BtnComponent -->
+        <app-btn 
+            [isLoading]="isLoading" 
+            type="submit" title="login"
+            [disabled]="FormSingUp.invalid || FormSingUp.value.country == 'Country' || FormSingUp.value.city == 'City'" 
+        >  
+        </app-btn>
+    </form>
+</div>
+<!-- end box login -->

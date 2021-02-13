@@ -1,0 +1,49 @@
+// global vars
+$white: #fff;
+$main_color: #28d;
+$main_color_2: #17c;
+$main_color_3: #05a;
+
+//**//
+.wrap {
+    padding: 12px;
+    input, select {
+        outline: 0;
+        width: 100%;
+        padding: 16px;
+        display: block;
+        border-width: 1px;
+        font-size: 0.95em;
+        border-style: solid;
+        font-family: inherit;
+        //** type input//
+        &[type="text"],
+        &[type="number"],
+        &[type="date"],
+        &[type="email"],
+        &[type="password"] {
+            color: #555;
+            // use var sass
+            background: $white;
+            border-color: #bbb;
+            &:focus {
+                border-color: #888;
+            }
+        }
+        &[type="submit"] {
+            // use var sass
+            color: $white;
+            cursor: pointer;
+            background: $main_color;
+            border-color: transparent;
+            &:hover {
+                // use var sass
+                background: $main_color_2
+            }
+            &:focus {
+                // use var sass
+                border-color: $main_color_3
+            }
+        }
+    }
+}
