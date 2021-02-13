@@ -35,8 +35,7 @@ export class ListComponent implements OnInit {
         title: 'Hey there',
         body: 'Subscribe to might ghost hack youtube channel',
       },
-      to:
-        'cMJhkfrBU6BgZ9TW4p0CmC:APA91bGVvcvoyTD0_G0isw0jSC_ms79qEJmqRZjgIwIAxyYBR9JRYSTFvigg7w5ToETYT6V3NDvNIn1ANtq_yCENEa3oOlYz7FpKQ5ah-iYX6rAMvHUm4Y_dAftixrOZo5OuBr6_-iXH',
+      "to" : localStorage.getItem('TOKEN_NOTE'),
     });    
 
   }

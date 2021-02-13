@@ -11,6 +11,15 @@
     </h2>
 
     <form class="sing_up-container" [formGroup]="FormSingUp" (ngSubmit)="register()">
+
+        <div (click)="registerFb()" class="login_media fb">
+            <span>facebook</span>
+        </div>
+        
+        <div class="login_media g">
+            <span>Google</span>
+        </div>
+
         <!-- use InputFiledComponent -->
         <app-input-filed type="text" name="name" [FormGroupParent]="FormSingUp" placeholder="Name">
         </app-input-filed>

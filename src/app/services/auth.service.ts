@@ -19,13 +19,9 @@ export class AuthService {
     return this.http.post('register', data);
   }
 
-  pushNotification(note: {}) {
-    return this.http.post('https://fcm.googleapis.com/fcm/send', note).subscribe(res => res);
-  }
-
   //method get
   getCountries() {
-    return this.http.get('getCountries')
+    return this.http.get('getCountries');
   }
 
   logOut() {
@@ -33,4 +29,11 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
   // start functionality authentication
+
+  // pushNotification firebase
+  pushNotification(note: {}) {
+    return this.http
+      .post('https://fcm.googleapis.com/fcm/send', note)
+      .subscribe((res) => res);
+  }
 }

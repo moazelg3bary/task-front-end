@@ -52,6 +52,20 @@ $main_color_3: #05a;
     .login-container {
         padding: 12px;
         background: #ebebeb;
+        .login_media {
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 10px;            
+            text-transform: capitalize;
+            &:first-of-type {
+                background-color: #3b5999;
+            }
+            &:last-of-type {
+                background-color: #dd4b39;
+            }            
+        }
     }
 }
 // end style section login

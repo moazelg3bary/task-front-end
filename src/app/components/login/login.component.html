@@ -11,6 +11,15 @@
     </h3>
 
     <form class="login-container" [formGroup]="FormLogin" (ngSubmit)="login()">
+
+        <div class="login_media">
+            <span>facebook</span>
+        </div>
+
+        <div class="login_media">
+            <span>Google</span>
+        </div>
+
         <!-- use InputFiledComponent -->
         <app-input-filed 
             type="text" 
