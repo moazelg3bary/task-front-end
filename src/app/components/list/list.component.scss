@@ -13,6 +13,22 @@
   background-size: cover;
 }
 
+.box_note {
+  top: 70px;
+  left: -100%;
+  width: 315px;
+  padding: 15px;
+  color: #ffff;
+  font-weight: 500;
+  position: absolute;
+  background: #1f6ebd;
+  transition: all 1s ease-in-out;
+  box-shadow: 5px 8px 6px #4040407a;
+  &.push {
+    left: 15px;    
+  }
+}
+
 // start style nav
 nav {
     ul {

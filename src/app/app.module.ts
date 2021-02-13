@@ -6,8 +6,13 @@ import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { MessagingService } from './services/messaging.service';
+import { AsyncPipe } from '../../node_modules/@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,16 +32,24 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     BrowserAnimationsModule,
+    AngularFireDatabaseModule,
+    AngularFireMessagingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [
+    MessagingService,
+    AsyncPipe,
     StateUserService,
-    {provide: HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true}
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
